@@ -27,3 +27,9 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+puts "#{blockchain[0]["from_user"]} #{blockchain[0]["to_user"]} #{blockchain[0]["amount"]}"
+
+nums = [0, 1, 2, 3, 4, 5, 6, 7]
+for num in nums
+ben_adds = blockchain[num]
+
