@@ -27,9 +27,39 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
-puts "#{blockchain[0]["from_user"]} #{blockchain[0]["to_user"]} #{blockchain[0]["amount"]}"
-
 nums = [0, 1, 2, 3, 4, 5, 6, 7]
-for num in nums
-ben_adds = blockchain[num]
+names = ["ben", "brian", "evan", "anthony"]
+balances = {"ben" => 0, "brian" => 0 , "evan" => 0, "anthony" => 0}
 
+for num in nums
+  for name in names
+    if blockchain[num]["to_user"] == name
+      balances[name] = balances[name] + blockchain[num]["amount"]
+    elsif blockchain[num]["from_user"] == name
+      balances[name] = balances[name]- blockchain[num]["amount"]
+    else
+      nil
+    end
+  end
+end  
+
+for name in names 
+  puts "#{name}'s KelloggCoin balance is #{balances[name]}"
+end
+
+# 👇👇👇 OLD 👇👇👇
+# ben_balance = 0 
+# brian_balance = 0 
+# evan_balance = 0
+# anthony_balance = 0
+# nums = [0, 1, 2, 3, 4, 5, 6, 7]
+# for num in nums
+#   if blockchain[num]["to_user"] == "ben"
+#     ben_balance = ben_balance + blockchain[num]["amount"]
+#   elsif blockchain[num]["from_user"] == "ben"
+#     ben_balance = ben_balance - blockchain[num]["amount"]
+#   else
+#     nil
+#   end
+# end
+# puts ben_balance
